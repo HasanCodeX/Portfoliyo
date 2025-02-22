@@ -1,0 +1,214 @@
+/* Global reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Dark mode styles */
+[data-theme='dark'] {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+[data-theme='light'] {
+  background-color: #ffffff;
+  color: #353239;
+}
+
+/* Hero Section */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 0 20px;
+  color: var(--primary-text, #fff); /* Dynamic text color */
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Row alignment */
+header .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* SVG Icon */
+header svg {
+  width: 120px;
+  height: 120px;
+  fill: var(--icon-color, #f1f1f1); /* Icon color based on theme */
+  animation: rotate-icon 10s linear infinite;
+  margin-bottom: 30px;
+}
+
+/* Main title styling */
+header .mb-0 {
+  font-size: 3.8em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: fadeIn 1.5s ease-out;
+  color: var(--primary-text, #fff); /* Dynamic text color */
+}
+
+/* Fade In effect for main title */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Static text (your name) */
+header .static-text {
+  font-size: 2.2em;
+  margin-top: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: fadeInText 2s ease-out forwards;
+  color: var(--primary-text, #fff); /* Dynamic text color */
+}
+
+/* Fade In effect for static text */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Dynamic text (frontend developer and react enthusiast) */
+header .banner-text {
+  font-size: 1.6em;
+  font-weight: 400;
+  margin-top: 20px;
+  font-style: bold;
+  opacity: 0;
+  animation: fadeInText 2s ease-out forwards 1s;
+  color: var(--secondary-text, #eee); /* Dynamic text color */
+  
+}
+
+/* Title container with animated titles */
+.title-container {
+  margin-top: 30px;
+}
+
+.title-styles {
+  display: inline-block;
+  font-size: 1.3em;
+  margin-right: 20px;
+  color: var(--secondary-text, #eee); /* Dynamic text color */
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.title-styles span {
+  margin-right: 20px;
+  display: inline-block;
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+/* Slide In animation for titles */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Switch button styling */
+.react-switch {
+  width: 50px;
+  height: 20px;
+}
+
+/* Iconify icons in the switch */
+.react-switch .iconify {
+    
+  font-size: 28px;
+  color: var(--switch-icon-color, #f1f1f1); /* Icon color based on theme */
+  
+}
+
+/* Owl icon color */
+.react-switch .iconify[data-icon='twemoji:owl'] {
+  color: var(--switch-owl-color, #baaa80); /* Owl icon color based on theme */
+}
+
+/* Sun icon color */
+.react-switch .iconify[data-icon='noto-v1:sun-with-face'] {
+  color: var(--switch-sun-color, #f1f1f1); /* Sun icon color based on theme */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  header .mb-0 {
+    font-size: 2.5em;
+  }
+
+  header .static-text {
+    font-size: 1.8em;
+  }
+
+  header .banner-text {
+    font-size: 1.3em;
+  }
+
+  header svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .title-styles {
+    font-size: 1.1em;
+  }
+}
+
+/* Light Theme Specific Adjustments */
+[data-theme='light'] {
+  --primary-text: #000000;  /* Black text color for light theme */
+  --secondary-text: #333333;  /* Dark gray text for secondary text in light theme */
+  --icon-color: #333333; /* Icon color for light theme */
+}
+
+/* Dark Theme Specific Adjustments */
+[data-theme='dark'] {
+  --primary-text: #fff;  /* White text color for dark theme */
+  --secondary-text: #eee; /* Light gray text for secondary text in dark theme */
+  --icon-color: #f1f1f1; /* Icon color for dark theme */
+}
+
+
+
